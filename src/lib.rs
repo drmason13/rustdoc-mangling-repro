@@ -1,17 +1,12 @@
 //! ```
 //! // included str literal
-//! let included = include_str!("sample.hjson");
+//! let included = include_str!("sample.txt");
 //!
-//! // raw str literal should match the content of sample.hjson
-//! let inlined = r#"{
-//!     # specify rate in requests/second
-//!     rate: 1000
-//!     array:
-//!     [
-//!         foo
-//!         bar
-//!     ]
-//! }"#;
+//! // raw str literal should match the content of sample.txt
+//! let inlined = r#"
+//! # this should be hidden by rustdoc
+//! this is after the hidden part
+//! "#;
 //!
-//! assert_eq!(inlined, included);
+//! assert_eq!(dbg!(inlined), dbg!(included));
 //! ```
